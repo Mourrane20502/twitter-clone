@@ -6,15 +6,15 @@ import SidebarCard from "./_components/SidebarCard";
 export default function HomePage() {
   return (
     <div className="bg-black min-h-screen text-white">
-      <div className="grid grid-cols-[400px_1.5fr_1fr]">
-        <aside className="flex sticky top-0 h-screen items-start mx-auto overflow-hidden flex-col border-r border-gray-100/20 gap-3 px-14 py-2">
+      <div className="grid grid-cols-[400px_1.5fr_1fr] max-md:grid-cols-1">
+        <aside className="flex sticky top-0 max-md:flex-row max-md:h-auto max-md:bg-black max-md:flex max-md:items-center max-md:justify-center max-md:px-6 max-md:top-[93%] max-md:fixed h-screen items-start mx-auto overflow-hidden flex-col border-r border-gray-100/20 gap-3 px-14 py-2">
           <Image src={X_Logo} width={60} height={60} alt="Twitter Logo" />
           {SideBarInfo.map((sidebar) => (
             <SidebarCard key={sidebar.href} {...sidebar} />
           ))}
         </aside>
         <main className="border-r border-gray-100/20 py-2">
-          <div className="grid grid-cols-1 py-3">
+          <div className="grid grid-cols-1 py-3 max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-48 border-b py-3 border-gray-100/20">
               <div className="text-lg font-semibold relative">
                 <div className="absolute top-full bg-blue-600 w-14 h-1"></div>
@@ -80,7 +80,7 @@ export default function HomePage() {
             ))}
           </div>
         </main>
-        <div className="flex flex-col items-start py-2 sticky top-0 h-screen">
+        <div className="flex flex-col max-md:hidden  items-start py-2 sticky top-0 h-screen">
           <div className="w-full px-6 mb-3">
             <input
               className="px-2 w-full border-2 py-2 border-gray-100/20 rounded-3xl"
